@@ -94,7 +94,7 @@ export class AppComponent {
     
     constructor(private fb: FormBuilder) {
         this.form = this.fb.group({
-            price: new FormControl({value: 11, disabled: true}),
+            price: 11,
         });
     }
        
