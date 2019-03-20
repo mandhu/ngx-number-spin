@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-root',
@@ -13,7 +13,7 @@ export class AppComponent {
     value: number = 0;
     constructor(private fb: FormBuilder) {
         this.form = this.fb.group({
-            price: new FormControl({value: 11, disabled: true}),
+            price: 11
         });
     }
 

@@ -2,6 +2,8 @@
 
 This is an angular number spinner component.
 
+![ngx-number-spin example image](/src/assets/images/example.png "ngx-number-spin example image")
+
 ## Installation
 
 To install this library (component), run:
@@ -38,7 +40,6 @@ export class AppModule { }
 ```
 
 Once this library is imported, you can use this component in your Angular application:
-
 ### Standalone Examples
 
 ```typescript
@@ -94,7 +95,7 @@ export class AppComponent {
     
     constructor(private fb: FormBuilder) {
         this.form = this.fb.group({
-            price: 11,
+            price: new FormControl({value: 11, disabled: true}),
         });
     }
        
@@ -113,7 +114,18 @@ export class AppComponent {
 </form>
 
 ```
+--------------------------------------------------------------------------------------------
+### Component Inputs and Outputs
+| Attribute        | Type           | Required  | Default | Description |
+| :------------- |:-------------| :-----:| :----| :-----|
+| value | [input] number | No | 0 | initial value for the spinner |
+| min | [input] number | No | null | limit the minimal number |
+| max | [input] number | No | null | limit the maximum number |
+| spin | [input] number | No | 1 | increment or decrement by current number  |
+| onChange | (output) number | no | - | emits the value of the current number, every time the user clicks the - or + button |
+
 
 -------------------------------------------------------------------------------------------------------
 
 ![ngx-number-spin example image](/src/assets/images/example.png "ngx-number-spin example image")
+
