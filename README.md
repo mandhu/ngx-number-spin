@@ -1,27 +1,116 @@
-# MatIncrements
+# ngx-number-spin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+This is an angular number spinner component.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To install this library (component), run:
+```bash
+$ npm i ngx-number-spin --save
+```
 
-## Code scaffolding
+## Usage
+add NumberPickerModule to `AppModule`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-## Build
+import { AppComponent } from './app.component';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+// Import this library
+import { NgxNumberSpinModule } from 'ngx-number-spin';
 
-## Running unit tests
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    
+    // Specify this library as an import
+    NgxNumberSpinModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Once this library is imported, you can use this component in your Angular application:
 
-## Running end-to-end tests
+### Standalone Examples
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```typescript
+export class AppComponent {
+    change(value: number): void {
+        console.log(value);
+    }
+}
+```
 
-## Further help
+##### With validation 'MIN' value (min=1)
+```html
+<ngx-number-spin
+    [value]="4"
+    (change)="change($event)" 
+    [min]="1">
+</ngx-number-spin>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+##### With validation 'MAX' value (min=9)
+```html
+<ngx-number-spin 
+    [value]="4"
+    (change)="change($event)" 
+    [max]="9">
+</ngx-number-spin>
+```
+
+##### With validation 'MIN' and 'MAX' value (min=1, max=9)
+```html
+<ngx-number-spin 
+    [value]="4"
+    (change)="change($event)"
+    [min]="1"
+    [max]="9">
+</ngx-number-spin>
+```
+
+##### With 'STEP' (step=5)
+```html
+<ngx-number-spin
+    (change)="change($event)" 
+    [step]="5">
+</ngx-number-spin>
+```
+--------------------------------------------------------------------------------------------------------------------
+### Form Example
+```typescript
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+
+export class AppComponent {
+    form: FormGroup;
+    
+    constructor(private fb: FormBuilder) {
+        this.form = this.fb.group({
+            price: new FormControl({value: 11, disabled: true}),
+        });
+    }
+       
+    submit() {
+        alert(JSON.stringify(this.form.value));
+    }
+}
+```
+
+```html
+<form [formGroup]="form" (submit)="submit()">
+
+    <ngx-number-spin formControlName="price" [min]="1" [max]="9"></ngx-number-spin>
+    
+    <button type="submit">submit</button>
+</form>
+
+```
+
