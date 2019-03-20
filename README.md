@@ -2,8 +2,6 @@
 
 This is an angular number spinner component.
 
-![ngx-number-spin example image](/src/assets/images/example.png "ngx-number-spin example image")
-
 ## Installation
 
 To install this library (component), run:
