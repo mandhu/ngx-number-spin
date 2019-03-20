@@ -93,7 +93,7 @@ export class AppComponent {
     
     constructor(private fb: FormBuilder) {
         this.form = this.fb.group({
-            price: new FormControl({value: 11, disabled: true}),
+            price: 11
         });
     }
        
@@ -109,6 +109,7 @@ export class AppComponent {
     <ngx-number-spin formControlName="price" [min]="1" [max]="9"></ngx-number-spin>
     
     <button type="submit">submit</button>
+    
 </form>
 
 ```

@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": "ng build --project ngx-number-spin",
+    "build:lib": "ng build --project ngx-number-spin && cp README.md dist/ngx-number-spin/",
     "publish:lib": "npm run build:lib && npm publish dist/ngx-number-spin"
   },
   "private": true,
