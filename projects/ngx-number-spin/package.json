@@ -1,6 +1,22 @@
 {
   "name": "ngx-number-spin",
   "version": "0.0.1",
+  "license": "MIT",
+  "description": "An Angular number spin component",
+  "keywords": [
+    "ng",
+    "ngx",
+    "angular",
+    "number",
+    "spin",
+    "ngx-number-spin",
+    "angular number spin component"
+  ],
+  "author": "mandhu <mandhu305@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandhu/ngx-number-spin.git"
+  },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
