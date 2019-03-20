@@ -10,7 +10,7 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         }
       },
       "architect": {
@@ -134,7 +134,47 @@
           }
         }
       }
+    },
+    "ngx-number-spin": {
+      "root": "projects/ngx-number-spin",
+      "sourceRoot": "projects/ngx-number-spin/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-number-spin/tsconfig.lib.json",
+            "project": "projects/ngx-number-spin/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-number-spin/src/test.ts",
+            "tsConfig": "projects/ngx-number-spin/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-number-spin/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-number-spin/tsconfig.lib.json",
+              "projects/ngx-number-spin/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "mat-increments"
+  "defaultProject": "ngx-number-spin"
 }
