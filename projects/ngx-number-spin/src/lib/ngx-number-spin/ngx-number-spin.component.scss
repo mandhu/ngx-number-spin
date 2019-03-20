@@ -28,6 +28,12 @@ input[type=number]::-webkit-outer-spin-button {
             border-top-right-radius: 7px;
             border-bottom-right-radius: 7px;
         }
+        &:disabled {
+            cursor: not-allowed;
+            svg {
+                fill: rgba(0,0,0,.26);
+            }
+        }
     }
     span {
         display: flex;

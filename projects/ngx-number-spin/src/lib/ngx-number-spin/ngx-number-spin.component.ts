@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output, forwardRef } from '@angular/core';
+import { Component, Input, EventEmitter, Output, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -15,11 +15,13 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class NgxNumberSpinComponent implements ControlValueAccessor {
 
+    @Output('change') change: EventEmitter<number> = new EventEmitter();
+    
     @Input('value') value: number = 0;
+    @Input('step') step: number = 1;
     @Input('min') min: number;
     @Input('max') max: number;
-    @Input('step') step: number = 1;
-    @Output('change') change: EventEmitter<number> = new EventEmitter();
+
     disabled: boolean;
     
     _propagateChange:any = () => {};
