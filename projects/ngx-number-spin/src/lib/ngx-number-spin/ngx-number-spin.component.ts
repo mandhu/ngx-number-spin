@@ -16,19 +16,20 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class NgxNumberSpinComponent implements ControlValueAccessor {
 
     @Output('change') change: EventEmitter<number> = new EventEmitter();
-    
+
     @Input('value') value: number = 0;
     @Input('step') step: number = 1;
     @Input('min') min: number;
     @Input('max') max: number;
+    @Input('direction') direction: 'horizontal'|'vertical' = 'horizontal';
 
     disabled: boolean;
-    
+
     _propagateChange:any = () => {};
     _onTouched: () => void;
 
     constructor() { }
-  
+
     writeValue(value: number): void {
         this.value = value || 0;
     }
@@ -44,12 +45,12 @@ export class NgxNumberSpinComponent implements ControlValueAccessor {
     setDisabledState?(isDisabled: boolean): void {
         this.disabled = isDisabled;
     }
-  
+
     inc() {
         this.value+= this.step;
         this._onChange();
     }
-  
+
     dec() {
         this.value-=this.step;
         this._onChange();

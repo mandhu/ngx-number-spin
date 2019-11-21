@@ -1,22 +1,15 @@
-
 <h1>Standalone Examples</h1>
 
-<p>With validation <b>'MIN'</b> value (min=1)</p>
+<p style="margin-top:2rem">Vertical</p>
 <ngx-number-spin
     [value]="4"
-    (change)="change($event)" 
-    [min]="1">
-</ngx-number-spin>
-
-<p style="margin-top:2rem">With validation <b>'MAX'</b> value (max=9)</p>
-<ngx-number-spin 
-    [value]="4"
-    (change)="change($event)" 
+    (change)="change($event)"
+    [direction]="'vertical'"
     [max]="9">
 </ngx-number-spin>
 
 <p style="margin-top:2rem">With validation <b>'MIN'</b> and <b>'MAX'</b>value (min=1, max=9)</p>
-<ngx-number-spin 
+<ngx-number-spin
     [value]="4"
     (change)="change($event)"
     [min]="1"
@@ -25,7 +18,7 @@
 
 <p style="margin-top:2rem">With <b>'STEP'</b> (step=5)</p>
 <ngx-number-spin
-    (change)="change($event)" 
+    (change)="change($event)"
     [step]="5">
 </ngx-number-spin>
 <br>

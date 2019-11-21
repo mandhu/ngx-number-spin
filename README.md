@@ -121,6 +121,7 @@ export class AppComponent {
 | min | [input] number | No | null | limit the minimal number |
 | max | [input] number | No | null | limit the maximum number |
 | spin | [input] number | No | 1 | increment or decrement by current number  |
+| vertical | [input] vertical|horizontal | No | horizontal | change the direction of the buttons |
 | (change) | (output) number | no | - | emits the value of the current number, every time the user clicks the - or + button |
 
 

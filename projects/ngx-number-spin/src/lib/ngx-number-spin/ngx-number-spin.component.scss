@@ -1,74 +1,101 @@
 $border: 1px solid rgba(0,0,0,.12);
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
   margin: 0;
 
 }
 .wrapper {
-    display: flex;
-    border: $border;
-    justify-content: space-between;
-    // max-width: 100px;
-    border-radius: 8px;
-    max-width: 200px;
-    button {
-        padding: .5rem;
-        overflow: hidden;
-        border: 0;
-        &:focus {
-            outline: none;
-        }
-        &:first-child {
-            border-top-left-radius: 7px;
-            border-bottom-left-radius: 7px;
-        }
-        &:last-child {
-            border-top-right-radius: 7px;
-            border-bottom-right-radius: 7px;
-        }
-        &:disabled {
-            cursor: not-allowed;
-            svg {
-                fill: rgba(0,0,0,.26);
-            }
-        }
+  max-width: 200px;
+  button {
+    padding: .5rem;
+    overflow: hidden;
+    border: 0;
+    &:focus {
+      outline: none;
     }
-    span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 .5rem;
-        font-size: 1rem;
-        border-left: $border;
-        border-right: $border;
-        flex: 1;
-        min-width: 30px;
-        text-align: center;
-        vertical-align: unset;
-        
+    &:disabled {
+      cursor: not-allowed;
+      svg {
+        fill: rgba(0,0,0,.26);
+      }
     }
-    // input {
-    //     padding: 0 .5rem;
-    //     font-size: 1rem;
-    //     border-top: 0;
-    //     border-bottom: 0;
-    //     border-left: $border;
-    //     border-right: $border;
-    //     flex: 1;
-    //     min-width: 30px;
-    //     text-align: center;
-    //     &:focus {
-    //         outline: 0;
-    //     }
-    // }
+  }
+  div {
+    align-items: center;
+    padding: 0 .5rem;
+    font-size: 1rem;
+    flex: 1;
+    min-width: 30px;
+    text-align: center;
+    vertical-align: unset;
+  }
 }
+
+.horizontal-wrapper {
+  display: flex;
+  border: $border;
+  justify-content: space-between;
+  // max-width: 100px;
+  border-radius: 8px;
+  button {
+    &:first-child {
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+    }
+    &:last-child {
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+    }
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    border-left: $border;
+    border-right: $border;
+  }
+  // input {
+  //     padding: 0 .5rem;
+  //     font-size: 1rem;
+  //     border-top: 0;
+  //     border-bottom: 0;
+  //     border-left: $border;
+  //     border-right: $border;
+  //     flex: 1;
+  //     min-width: 30px;
+  //     text-align: center;
+  //     &:focus {
+  //         outline: 0;
+  //     }
+  // }
+}
+
+.vertical-wrapper {
+  button {
+    &:first-child {
+      border: $border;
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+    }
+    &:last-child {
+      border: $border;
+      border-radius: 0 0 10px 10px;
+      width: 100%;
+    }
+  }
+  div {
+    border-left: $border;
+    border-right: $border;
+    padding: .5rem;
+  }
+}
+
 /* Ripple effect */
 .ripple {
     background-position: center;
     transition: background 0.3s;
- 
+
 
     &:hover {
         cursor: pointer;
@@ -80,4 +107,3 @@ input[type=number]::-webkit-outer-spin-button {
         transition: background 0s;
     }
 }
-  
