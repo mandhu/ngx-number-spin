@@ -13,6 +13,7 @@
     "angular number spin component"
   ],
   "author": "Jeremy Quick<me@jrquick.com>",
+  "github": "https://github.com/jrquick17/ngx-number-spinner",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jrquick17/ngx-number-spinner.git"

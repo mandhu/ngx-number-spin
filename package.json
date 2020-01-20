@@ -1,6 +1,8 @@
 {
   "name": "ngx-number-spinner",
   "version": "1.0.0",
+  "author": "Jeremy Quick<me@jrquick.com>",
+  "github": "https://github.com/jrquick17/ngx-number-spinner",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
