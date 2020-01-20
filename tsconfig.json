@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "ngx-number-spin": [
-        "dist/ngx-number-spin"
+      "ngx-number-spinner": [
+        "dist/ngx-number-spinner"
       ],
-      "ngx-number-spin/*": [
-        "dist/ngx-number-spin/*"
+      "ngx-number-spinner/*": [
+        "dist/ngx-number-spinner/*"
       ]
     }
   }

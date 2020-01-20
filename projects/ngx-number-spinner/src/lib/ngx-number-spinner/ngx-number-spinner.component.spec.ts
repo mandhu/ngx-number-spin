@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxNumberSpinComponent } from './ngx-number-spin.component';
+import { NgxNumberSpinnerComponent } from './ngx-number-spinner.component';
 
-describe('NgxNumberSpinComponent', () => {
-  let component: NgxNumberSpinComponent;
-  let fixture: ComponentFixture<NgxNumberSpinComponent>;
+describe('NgxNumberSpinnerComponent', () => {
+  let component: NgxNumberSpinnerComponent;
+  let fixture: ComponentFixture<NgxNumberSpinnerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxNumberSpinComponent ]
+      declarations: [ NgxNumberSpinnerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxNumberSpinComponent);
+    fixture = TestBed.createComponent(NgxNumberSpinnerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

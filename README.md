@@ -1,16 +1,45 @@
-# ngx-number-spin
+# ngx-number-spinner
 
-This is an angular number spinner component.
+[![npm](https://img.shields.io/npm/l/ngx-number-spinner.svg)](https://www.npmjs.com/package/ngx-number-spinner/)
+[![npm](https://img.shields.io/npm/dt/ngx-number-spinner.svg)](https://www.npmjs.com/package/ngx-number-spinner)
+[![npm](https://img.shields.io/npm/dm/ngx-number-spinner.svg)](https://www.npmjs.com/package/ngx-number-spinner)
 
-## Installation
+![](example.png)
 
-To install this library (component), run:
+## Index ##
+
+* [About](#about)
+* [Setup](#setup)
+* [Documentation](#documentation)
+* [Issues](#issues)
+* [Contributing](#contributing)
+* [Deploy](#deploy)
+
+## About ## 
+
+This is a light-weight Angular 7+ component for adding a number spinner to your project. 
+
+* Try out [the demo](https://ngx-number-spinner.jrquick.com) to see it in action!
+* Checkout [my other Angular project](https://github.com/jrquick17/ngx-text-editor) to add a WYSIWYG editor to your project too!
+* Visit [my website](https://jrquick.com) for other cool projects!
+
+## Setup ##
+
+### Installation ###
+
+* For Angular 7: 
 ```bash
-$ npm i ngx-number-spin --save
+$ npm install ngx-number-spinner@^1.0.0 --save
 ```
 
-## Usage
-add NumberPickerModule to `AppModule`
+* For Angular 8+: 
+```bash
+$ npm install ngx-number-spinner --save
+```
+
+### Inject ###
+
+Add NumberPickerModule to `AppModule`
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,8 +47,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import this library
-import { NgxNumberSpinModule } from 'ngx-number-spin';
+import { NgxNumberSpinnerModule } from 'ngx-number-spinner';
 
 @NgModule({
   declarations: [
@@ -27,18 +55,19 @@ import { NgxNumberSpinModule } from 'ngx-number-spin';
   ],
   imports: [
     BrowserModule,
-    
-    // Specify this library as an import
-    NgxNumberSpinModule,
+    NgxNumberSpinnerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
 ```
 
-Once this library is imported, you can use this component in your Angular application:
-### Standalone Examples
+## Documentation ##
+
+### Standalone Examples ###
 
 ```typescript
 export class AppComponent {
@@ -48,40 +77,40 @@ export class AppComponent {
 }
 ```
 
-##### With validation 'MIN' value (min=1)
+#### With validation 'MIN' value (min=1) ####
 ```html
-<ngx-number-spin
+<ngx-number-spinner
     [value]="4"
     (change)="change($event)" 
     [min]="1">
-</ngx-number-spin>
+</ngx-number-spinner>
 ```
 
-##### With validation 'MAX' value (min=9)
+#### With validation 'MAX' value (min=9) ####
 ```html
-<ngx-number-spin 
+<ngx-number-spinner
     [value]="4"
     (change)="change($event)" 
     [max]="9">
-</ngx-number-spin>
+</ngx-number-spinner>
 ```
 
-##### With validation 'MIN' and 'MAX' value (min=1, max=9)
+#### With validation 'MIN' and 'MAX' value (min=1, max=9) ####
 ```html
-<ngx-number-spin 
+<ngx-number-spinner
     [value]="4"
     (change)="change($event)"
     [min]="1"
     [max]="9">
-</ngx-number-spin>
+</ngx-number-spinner>
 ```
 
-##### With 'STEP' (step=5)
+#### With 'STEP' (step=5) ####
 ```html
-<ngx-number-spin
+<ngx-number-spinner
     (change)="change($event)" 
     [step]="5">
-</ngx-number-spin>
+</ngx-number-spinner>
 ```
 --------------------------------------------------------------------------------------------------------------------
 ### Form Example
@@ -105,16 +134,16 @@ export class AppComponent {
 
 ```html
 <form [formGroup]="form" (submit)="submit()">
-
-    <ngx-number-spin formControlName="price" [min]="1" [max]="9"></ngx-number-spin>
+    <ngx-number-spinner formControlName="price" [min]="1" [max]="9"></ngx-number-spinner>
     
     <button type="submit">submit</button>
-    
 </form>
 
 ```
---------------------------------------------------------------------------------------------
+
 ### Component Inputs and Outputs
+
+--------------------------------------------------------------------------------------------
 | Attribute        | Type           | Required  | Default | Description |
 | :------------- |:-------------| :-----:| :----| :-----|
 | value | [input] number | No | 0 | initial value for the spinner |
@@ -123,9 +152,17 @@ export class AppComponent {
 | spin | [input] number | No | 1 | increment or decrement by current number  |
 | vertical | [input] vertical|horizontal | No | horizontal | change the direction of the buttons |
 | (change) | (output) number | no | - | emits the value of the current number, every time the user clicks the - or + button |
-
-
 -------------------------------------------------------------------------------------------------------
 
-![ngx-number-spin example image](/src/assets/images/example.png "ngx-number-spin example image")
+## Issues ##
 
+If you find any issues feel free to open a request in [the Issues tab](https://github.com/jrquick17/ngx-number-spinner/issues). If I have the time I will try to solve any issues but cannot make any guarantees. Feel free to contribute yourself.
+
+## Contributing ##
+
+To contribute, clone the repo. Then, run `npm install` to get the packages needed for the library to work.
+
+### Thanks ###
+
+* [mandhu](https://github.com/mandhu)
+* [jrquick17](https://github.com/jrquick17)

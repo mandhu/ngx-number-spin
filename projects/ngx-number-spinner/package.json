@@ -1,8 +1,8 @@
 {
-  "name": "ngx-number-spin",
-  "version": "0.0.4",
+  "name": "ngx-number-spinner",
+  "version": "1.0.0",
   "license": "MIT",
-  "description": "An Angular number spin component",
+  "description": "An Angular number spinner component",
   "keywords": [
     "ng",
     "ngx",
@@ -12,10 +12,10 @@
     "ngx-number-spin",
     "angular number spin component"
   ],
-  "author": "mandhu <mandhu305@gmail.com>",
+  "author": "Jeremy Quick<me@jrquick.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mandhu/ngx-number-spin.git"
+    "url": "git+https://github.com/jrquick17/ngx-number-spinner.git"
   },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
