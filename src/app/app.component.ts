@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AppComponent {
   form:FormGroup;
-  title:string = 'mat-increments';
+  title:string = 'ngx-number-spinner';
   value:number = 0;
 
   constructor(private fb: FormBuilder) {
