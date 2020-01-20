@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "author": "Jeremy Quick<me@jrquick.com>",
   "github": "https://github.com/jrquick17/ngx-number-spinner",
+  "license": "MIT",
+  "readme": "README.md",
+  "bugs": {
+    "url": "https://github.com/jrquick17/ionic4-auto-complete/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
