@@ -1,39 +1,54 @@
-<h1>Standalone Examples</h1>
+<h3 style="margin-top: 6rem; margin-left: 2rem;">
+  Horizontal Example
+</h3>
 
-<p style="margin-top:2rem">Vertical</p>
-<ngx-number-spinner
-    [value]="4"
-    (change)="change($event)"
-    [direction]="'vertical'"
-    [max]="9">
-</ngx-number-spinner>
+<div style="margin-left: 4rem;">
+  <ngx-number-spinner [value]="1"
+                      (change)="change($event)"
+                      [direction]="'horizontal'"></ngx-number-spinner>
+</div>
 
-<p style="margin-top:2rem">With validation <b>'MIN'</b> and <b>'MAX'</b>value (min=1, max=9)</p>
-<ngx-number-spinner
-    [value]="4"
-    (change)="change($event)"
-    [min]="1"
-    [max]="9">
-</ngx-number-spinner>
+<h3 style="margin-top: 2rem; margin-left: 2rem;">
+  Vertical Example
+</h3>
 
-<p style="margin-top:2rem">With <b>'STEP'</b> (step=5)</p>
-<ngx-number-spinner
-    (change)="change($event)"
-    [step]="5">
-</ngx-number-spinner>
-<br>
-<hr>
+<div style="margin-left: 4rem;">
+  <ngx-number-spinner style="margin-left: 4rem;"
+                      [value]="2"
+                      (change)="change($event)"
+                      [direction]="'vertical'"></ngx-number-spinner>
+</div>
 
-<h1>Form Example</h1>
+<h3 style="margin-top: 2rem; margin-left: 2rem;">
+  With <b>[min]="1"</b> and <b>[max]="2"</b>
+</h3>
 
-<form [formGroup]="form" (submit)="submit()">
-    <ngx-number-spinner formControlName="price" [min]="1" [max]="9"></ngx-number-spinner>
-    <button type="submit" style="margin-top:20px">submit</button>
-</form>
+<div style="margin-left: 4rem;">
+  <ngx-number-spinner style="margin-left: 4rem;"
+                      [value]="4"
+                      (change)="change($event)"
+                      [min]="1"
+                      [max]="9"></ngx-number-spinner>
+</div>
 
+<h3 style="margin-top: 2rem; margin-left: 2rem;">
+  With <b>[step]="5"</b>
+</h3>
 
-<p>Form value in json</p>
+<div style="margin-left: 4rem;">
+  <ngx-number-spinner (change)="change($event)"
+                      [step]="5"></ngx-number-spinner>
+</div>
 
-<pre> {{ form.value | json }}</pre>
+<h3 style="margin-top: 2rem; margin-left: 2rem;">
+  In a form
+</h3>
 
-
+<div style="margin-left: 4rem;">
+  <form [formGroup]="form"
+        (submit)="submit()">
+      <ngx-number-spinner
+        formControlName="price">
+      </ngx-number-spinner>
+  </form>
+</div>
