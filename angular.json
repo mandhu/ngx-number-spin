@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mat-increments": {
+    "ngx-number-spinner-demo": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mat-increments",
+            "outputPath": "dist/demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mat-increments:build"
+            "browserTarget": "ngx-number-spinner:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mat-increments:build:production"
+              "browserTarget": "ngx-number-spinner:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mat-increments:build"
+            "browserTarget": "ngx-number-spinner:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "mat-increments-e2e": {
+    "ngx-number-spinner-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mat-increments:serve"
+            "devServerTarget": "ngx-number-spinner:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mat-increments:serve:production"
+              "devServerTarget": "ngx-number-spinner:serve:production"
             }
           }
         },
@@ -135,9 +135,9 @@
         }
       }
     },
-    "ngx-number-spin": {
-      "root": "projects/ngx-number-spin",
-      "sourceRoot": "projects/ngx-number-spin/src",
+    "ngx-number-spinner": {
+      "root": "projects/ngx-number-spinner",
+      "sourceRoot": "projects/ngx-number-spinner/src",
       "projectType": "library",
       "prefix": "lib",
       "schematics": {
@@ -149,24 +149,24 @@
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ngx-number-spin/tsconfig.lib.json",
-            "project": "projects/ngx-number-spin/ng-package.json"
+            "tsConfig": "projects/ngx-number-spinner/tsconfig.lib.json",
+            "project": "projects/ngx-number-spinner/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-number-spin/src/test.ts",
-            "tsConfig": "projects/ngx-number-spin/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-number-spin/karma.conf.js"
+            "main": "projects/ngx-number-spinner/src/test.ts",
+            "tsConfig": "projects/ngx-number-spinner/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-number-spinner/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngx-number-spin/tsconfig.lib.json",
-              "projects/ngx-number-spin/tsconfig.spec.json"
+              "projects/ngx-number-spinner/tsconfig.lib.json",
+              "projects/ngx-number-spinner/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -176,5 +176,5 @@
       }
     }
   },
-  "defaultProject": "ngx-number-spin"
+  "defaultProject": "ngx-number-spinner"
 }

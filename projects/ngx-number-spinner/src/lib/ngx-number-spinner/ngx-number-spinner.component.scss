@@ -1,0 +1,94 @@
+$border: 1px solid rgba(0,0,0,.12);
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 200px;
+  button {
+    padding: .5rem;
+    overflow: hidden;
+    border: 0;
+    &:focus {
+      outline: none;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      svg {
+        fill: rgba(0,0,0,.26);
+      }
+    }
+  }
+  div {
+    align-items: center;
+    padding: 0 .5rem;
+    font-size: 1rem;
+    flex: 1;
+    min-width: 30px;
+    text-align: center;
+    vertical-align: unset;
+  }
+}
+
+.horizontal-wrapper {
+  display: flex;
+  border: $border;
+  justify-content: space-between;
+  // max-width: 100px;
+  border-radius: 8px;
+  button {
+    &:first-child {
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+    }
+    &:last-child {
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+    }
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    border-left: $border;
+    border-right: $border;
+  }
+}
+
+.vertical-wrapper {
+  button {
+    &:first-child {
+      border: $border;
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+    }
+    &:last-child {
+      border: $border;
+      border-radius: 0 0 10px 10px;
+      width: 100%;
+    }
+  }
+  div {
+    border-left: $border;
+    border-right: $border;
+    padding: .5rem;
+  }
+}
+
+.ripple {
+    background-position: center;
+    transition: background 0.3s;
+
+
+    &:hover {
+        cursor: pointer;
+        background: rgba(0,0,0,.12) radial-gradient(circle, transparent 1%, rgba(0,0,0,.12) 1%) center/15000%;
+    }
+    &:active {
+        background-color: rgba(0,0,0,.12);
+        background-size: 100%;
+        transition: background 0s;
+    }
+}
