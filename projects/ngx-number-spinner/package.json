@@ -23,8 +23,8 @@
     "url": "git+https://github.com/jrquick17/ngx-number-spinner.git"
   },
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/common": "^8.0.0 || ^9.0.0 || ^10.0.0",
+    "@angular/core": "^8.0.0 || ^9.0.0 || ^10.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"
