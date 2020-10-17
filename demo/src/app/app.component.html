@@ -1,0 +1,153 @@
+<p>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span (click)="goToGitHub()" style="cursor: pointer;">ngx-number-spinner</span>
+
+      <button mat-icon-button
+              style="margin-left: 10px;"
+              aria-label="Go to GitHub"
+              (click)="goToGitHub()">
+        <mat-icon>home</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>
+
+<mat-grid-list cols="2">
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title style="text-align: center;">
+        Horizontal
+      </mat-card-title>
+
+      <mat-card-content>
+        <ngx-number-spinner [value]="1"
+                            (change)="change($event)"
+                            [direction]="'horizontal'"></ngx-number-spinner>
+
+        <ngx-number-spinner [value]="2"
+                            (change)="change($event)"
+                            [direction]="'horizontal'"></ngx-number-spinner>
+
+        <ngx-number-spinner [value]="3"
+                            (change)="change($event)"
+                            [direction]="'horizontal'"></ngx-number-spinner>
+
+        <ngx-number-spinner [value]="4"
+                            (change)="change($event)"
+                            [direction]="'horizontal'"></ngx-number-spinner>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title style="text-align: center;">
+        Vertical
+      </mat-card-title>
+
+      <mat-card-content style="margin-top: 30%;">
+        <mat-grid-list cols="4">
+          <mat-grid-tile style="height: 100%;">
+            <ngx-number-spinner [value]="5"
+                                (change)="change($event)"
+                                [direction]="'vertical'"></ngx-number-spinner>
+          </mat-grid-tile>
+
+          <mat-grid-tile style="height: 100%;">
+            <ngx-number-spinner [value]="6"
+                                (change)="change($event)"
+                                [direction]="'vertical'"></ngx-number-spinner>
+          </mat-grid-tile>
+
+          <mat-grid-tile style="height: 100%;">
+            <ngx-number-spinner [value]="7"
+                                (change)="change($event)"
+                                [direction]="'vertical'"></ngx-number-spinner>
+          </mat-grid-tile>
+
+          <mat-grid-tile style="height: 100%;">
+            <ngx-number-spinner [value]="8"
+                                (change)="change($event)"
+                                [direction]="'vertical'"></ngx-number-spinner>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title style="text-align: center;">
+        <b>[min]="1"</b> and <b>[max]="2"</b>
+      </mat-card-title>
+
+      <mat-card-content>
+        <ngx-number-spinner style="margin-left: 4rem;"
+                            [value]="1"
+                            (change)="change($event)"
+                            [min]="1"
+                            [max]="2"></ngx-number-spinner>
+
+        <ngx-number-spinner style="margin-left: 4rem;"
+                            [value]="1"
+                            (change)="change($event)"
+                            [min]="1"
+                            [max]="2"></ngx-number-spinner>
+
+        <ngx-number-spinner style="margin-left: 4rem;"
+                            [value]="1"
+                            (change)="change($event)"
+                            [min]="1"
+                            [max]="2"></ngx-number-spinner>
+
+        <ngx-number-spinner style="margin-left: 4rem;"
+                            [value]="1"
+                            (change)="change($event)"
+                            [min]="1"
+                            [max]="2"></ngx-number-spinner>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card style="margin: 20px; padding: 20px;">
+      <mat-card-title style="text-align: center;">
+        With <b>[step]="5"</b>
+      </mat-card-title>
+
+      <mat-card-content>
+        <ngx-number-spinner (change)="change($event)"
+                            [value]="0"
+                            [step]="5"></ngx-number-spinner>
+
+        <ngx-number-spinner (change)="change($event)"
+                            [step]="25"></ngx-number-spinner>
+
+        <ngx-number-spinner (change)="change($event)"
+                            [step]="50"></ngx-number-spinner>
+
+        <ngx-number-spinner (change)="change($event)"
+                            [step]="75"></ngx-number-spinner>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="2">
+    <mat-card style="margin-left: 10px; margin-right: 10px;">
+      <mat-card-title style="text-align: center;">
+        In a form
+      </mat-card-title>
+
+      <mat-card-content>
+        <form [formGroup]="form"
+              (submit)="submit()">
+          <ngx-number-spinner formControlName="price"></ngx-number-spinner>
+          <ngx-number-spinner formControlName="price"></ngx-number-spinner>
+          <ngx-number-spinner formControlName="price"></ngx-number-spinner>
+          <ngx-number-spinner formControlName="price"></ngx-number-spinner>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

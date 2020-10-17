@@ -1,64 +1,92 @@
 {
   "name": "ngx-number-spinner",
-  "version": "2.0.0",
-  "author": "Jeremy Quick<me@jrquick.com>",
-  "github": "https://github.com/jrquick17/ngx-number-spinner",
-  "license": "MIT",
+  "version": "2.2.1",
   "readme": "README.md",
-  "bugs": {
-    "url": "https://github.com/jrquick17/ionic4-auto-complete/issues"
-  },
+  "homepage": "https://ngx-number-spinner.jrquick.com",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "build:demo": "ng build --project=ngx-number-spinner-demo",
-    "build:lib": "ng build --project ngx-number-spinner && cp README.md dist/ngx-number-spinner/",
-    "publish:lib": "npm run build:lib && npm publish dist/ngx-number-spinner"
+    "build": "ng-packagr -p package.json",
+    "demo": "cd demo && ng serve",
+    "demo:build": "cd demo && ng build --prod && cd ..",
+    "demo:test": "npm run build && cd demo && cp -fr ../dist/* node_modules/ngx-number-spinner/ && cd .. && npm run demo",
+    "docs": "npm run docs:build",
+    "docs:build": "compodoc -p tsconfig.json -n ngx-number-spinner -d docs --hideGenerator",
+    "docs:serve": "npm run docs:build -- -s",
+    "docs:watch": "npm run docs:build -- -s -w",
+    "lint": "tslint --project tsconfig.json src/**/*.ts",
+    "publish": "npm publish dist",
+    "shipit": "npm run test && npm run build && npm run docs:build && npm run publish",
+    "test": "ng test --browsers PhantomJS --progress --watch false"
   },
-  "private": true,
-  "dependencies": {
-    "@angular/animations": "~8.2.14",
-    "@angular/cdk": "^8.2.3",
-    "@angular/common": "~8.2.14",
-    "@angular/compiler": "~8.2.14",
-    "@angular/core": "~8.2.14",
-    "@angular/forms": "~8.2.14",
-    "@angular/material": "^8.2.3",
-    "@angular/platform-browser": "~8.2.14",
-    "@angular/platform-browser-dynamic": "~8.2.14",
-    "@angular/router": "~8.2.14",
-    "core-js": "^3.6.4",
-    "rxjs": "~6.5.4",
-    "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrquick17/ngx-number-spinner"
+  },
+  "author": {
+    "name": "Jeremy Quick",
+    "email": "me@jrquick.com",
+    "url": "https://jrquick.com"
+  },
+  "keywords": [
+    "angular",
+    "internet-speed",
+    "speed-test"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrquick17/ngx-number-spinner/issues"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "src/main.ts"
+    }
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.803.23",
-    "@angular-devkit/build-ng-packagr": "~0.803.23",
-    "@angular/cli": "~8.3.23",
-    "@angular/compiler-cli": "~8.2.14",
-    "@angular/language-service": "~8.2.14",
-    "@types/jasmine": "~3.5.1",
-    "@types/jasminewd2": "~2.0.8",
-    "@types/node": "~13.1.8",
-    "codelyzer": "~5.2.1",
+    "@angular-devkit/architect": "^0.1000.3",
+    "@angular-devkit/build-angular": "~0.1000.3",
+    "@angular-devkit/core": "^10.0.3",
+    "@angular-devkit/schematics": "^10.0.3",
+    "@angular/animations": "^10.0.5",
+    "@angular/cdk": "^10.1.0",
+    "@angular/cli": "^10.0.3",
+    "@angular/common": "^10.0.5",
+    "@angular/compiler": "^10.0.5",
+    "@angular/compiler-cli": "^10.0.5",
+    "@angular/core": "^10.0.5",
+    "@angular/forms": "^10.0.5",
+    "@angular/language-service": "^10.0.5",
+    "@angular/platform-browser": "^10.0.5",
+    "@angular/platform-browser-dynamic": "^10.0.5",
+    "@angular/router": "^10.0.5",
+    "@angular/service-worker": "^10.0.5",
+    "@compodoc/compodoc": "^1.1.11",
+    "@types/core-js": "^2.5.3",
+    "@types/jasmine": "^3.5.11",
+    "@types/node": "^12.12.68",
+    "codelyzer": "^6.0.0",
+    "fsevents": "^2.1.3",
+    "hammerjs": "^2.0.8",
+    "intl": "^1.2.5",
     "jasmine-core": "~3.5.0",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~4.4.1",
+    "jasmine-spec-reporter": "^5.0.2",
+    "karma": "~5.0.0",
     "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~2.1.1",
-    "karma-jasmine": "~3.1.0",
-    "karma-jasmine-html-reporter": "^1.5.1",
-    "ng-packagr": "^5.7.1",
-    "protractor": "~5.4.2",
-    "ts-node": "~8.6.2",
-    "tsickle": ">=0.38.0",
-    "tslib": "^1.10.0",
-    "tslint": "~5.20.1",
-    "typescript": "~3.5.3"
-  }
+    "karma-cli": "~2.0.0",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~3.3.0",
+    "karma-jasmine-html-reporter": "^1.5.4",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "ng-packagr": "^10.0.0",
+    "protractor": "~7.0.0",
+    "rollup": "^2.32.0",
+    "rxjs": "^6.6.0",
+    "ts-node": "^8.10.2",
+    "tslint": "~6.1.0",
+    "typescript": "~3.9.7",
+    "webpack": "^4.43.0",
+    "zone.js": "~0.10.3"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "peerDependencies": {}
 }

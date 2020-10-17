@@ -45,4 +45,3 @@ testem.log
 Thumbs.db
 
 .git/
-package-lock.json

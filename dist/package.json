@@ -1,0 +1,39 @@
+{
+  "name": "ngx-number-spinner",
+  "version": "2.2.1",
+  "readme": "README.md",
+  "homepage": "https://ngx-number-spinner.jrquick.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrquick17/ngx-number-spinner"
+  },
+  "author": {
+    "name": "Jeremy Quick",
+    "email": "me@jrquick.com",
+    "url": "https://jrquick.com"
+  },
+  "keywords": [
+    "angular",
+    "internet-speed",
+    "speed-test"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrquick17/ngx-number-spinner/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "peerDependencies": {},
+  "main": "bundles/ngx-number-spinner.umd.js",
+  "module": "fesm2015/ngx-number-spinner.js",
+  "es2015": "fesm2015/ngx-number-spinner.js",
+  "esm2015": "esm2015/ngx-number-spinner.js",
+  "fesm2015": "fesm2015/ngx-number-spinner.js",
+  "typings": "ngx-number-spinner.d.ts",
+  "metadata": "ngx-number-spinner.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}
