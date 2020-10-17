@@ -15,15 +15,19 @@ export class AppComponent {
 
   constructor(private fb:FormBuilder) {
     this.form = this.fb.group({
-      price: 11
+      price: 17
     });
   }
 
-  submit() {
-    alert(JSON.stringify(this.form.value));
+  public change(value: number) {
+    this.value = value;
   }
 
-  change(value: number) {
-    this.value = value;
+  public goToGitHub():void {
+    window.location.href = 'https://github.com/jrquick17/ngx-number-spinner';
+  }
+
+  public submit() {
+    alert(JSON.stringify(this.form.value));
   }
 }

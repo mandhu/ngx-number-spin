@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^10.0.14",
     "@angular/router": "^10.0.14",
     "@fortawesome/fontawesome-free": "^5.15.1",
-    "ngx-number-spinner": "^2.0.0",
+    "ngx-number-spinner": "^2.2.1",
     "rxjs": "^6.6.3",
     "tslib": "^2.0.3",
     "zone.js": "~0.10.3"

@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 
-import { NgxNumberSpinnerComponent } from './components/ngx-number-spinner/ngx-number-spinner.component';
+import {NgxNumberSpinnerComponent} from './components/ngx-number-spinner/ngx-number-spinner.component';
 
 @NgModule({
   declarations: [
