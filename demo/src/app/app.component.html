@@ -1,0 +1,87 @@
+<p>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span (click)="goToGitHub()" style="cursor: pointer;">ngx-number-spinner</span>
+
+      <button mat-icon-button
+              style="margin-left: 10px;"
+              aria-label="Go to GitHub"
+              (click)="goToGitHub()">
+        <mat-icon>home</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>
+
+<mat-card style="margin: 20px; padding: 20px;">
+  <mat-card-subtitle style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+    Horizontal Example
+  </mat-card-subtitle>
+
+  <mat-card-content>
+    <div style="margin-left: 4rem; max-width: 200px;">
+      <ngx-number-spinner [value]="1"
+                          (change)="change($event)"
+                          [direction]="'horizontal'"></ngx-number-spinner>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="margin: 20px; padding: 20px;">
+  <mat-card-subtitle style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+    Vertical Example
+  </mat-card-subtitle>>
+
+  <mat-card-content>
+    <div style="margin-left: 4rem; max-width: 200px;">
+      <ngx-number-spinner style="margin-left: 4rem;"
+                          [value]="2"
+                          (change)="change($event)"
+                          [direction]="'vertical'"></ngx-number-spinner>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="margin: 20px; padding: 20px;">
+  <mat-card-subtitle style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+    With <b>[min]="1"</b> and <b>[max]="2"</b>
+  </mat-card-subtitle>>
+
+  <mat-card-content>
+    <div style="margin-left: 4rem; max-width: 200px;">
+      <ngx-number-spinner style="margin-left: 4rem;"
+                          [value]="4"
+                          (change)="change($event)"
+                          [min]="1"
+                          [max]="9"></ngx-number-spinner>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="margin: 20px; padding: 20px;">
+  <mat-card-subtitle style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+    With <b>[step]="5"</b>
+  </mat-card-subtitle>>
+
+  <mat-card-content>
+    <div style="margin-left: 4rem; max-width: 200px;">
+      <ngx-number-spinner (change)="change($event)"
+                          [step]="5"></ngx-number-spinner>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="margin: 20px; padding: 20px;">
+  <mat-card-subtitle style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+    In a form
+  </mat-card-subtitle>>
+
+  <mat-card-content>
+    <div style="margin-left: 4rem; max-width: 200px;">
+      <form [formGroup]="form"
+            (submit)="submit()">
+        <ngx-number-spinner formControlName="price"></ngx-number-spinner>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>
