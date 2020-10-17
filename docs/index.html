@@ -1,0 +1,271 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngx-number-spinner</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">ngx-number-spinner</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="ngx-number-spinner">ngx-number-spinner</h1>
+<p><a href="https://www.npmjs.com/package/ngx-number-spinner/"><img src="https://img.shields.io/npm/l/ngx-number-spinner.svg" alt="npm" class="img-responsive"></a>
+<a href="https://www.npmjs.com/package/ngx-number-spinner"><img src="https://img.shields.io/npm/dt/ngx-number-spinner.svg" alt="npm" class="img-responsive"></a>
+<a href="https://www.npmjs.com/package/ngx-number-spinner"><img src="https://img.shields.io/npm/dm/ngx-number-spinner.svg" alt="npm" class="img-responsive"></a></p>
+<p><img src="example.png" alt="" class="img-responsive"></p>
+<h2 id="index">Index</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#issues">Issues</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#deploy">Deploy</a></li>
+</ul>
+<h2 id="about">About</h2>
+<p>This is a light-weight Angular 7+ component for adding a number spinner to your project. </p>
+<ul>
+<li>Try out <a href="https://ngx-number-spinner.jrquick.com">the demo</a> to see it in action!</li>
+<li>Visit <a href="https://jrquick.com">my website</a> for other cool projects!</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<h3 id="installation">Installation</h3>
+<ul>
+<li><p>For Angular 7: </p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm install ngx-number-spinner&#64;^1.0.0 --save</code></pre></div></li>
+<li><p>For Angular 8+: </p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm install ngx-number-spinner --save</code></pre></div></li>
+</ul>
+<h3 id="inject">Inject</h3>
+<p>Add NumberPickerModule to <code>AppModule</code></p>
+<div><pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#64;angular/platform-browser&#39;;
+import { NgModule } from &#39;&#64;angular/core&#39;;
+
+import { AppComponent } from &#39;./app.component&#39;;
+
+import { NgxNumberSpinnerModule } from &#39;ngx-number-spinner&#39;;
+
+&#64;NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgxNumberSpinnerModule
+  ],
+  providers: [],
+  bootstrap: [
+    AppComponent
+  ]
+})
+export class AppModule { }</code></pre></div><h2 id="documentation">Documentation</h2>
+<h3 id="standalone-examples">Standalone Examples</h3>
+<div><pre class="line-numbers"><code class="language-typescript">export class AppComponent {
+    change(value: number): void {
+        console.log(value);
+    }
+}</code></pre></div><h4 id="with-validation-min-value-min1">With validation &#39;MIN&#39; value (min=1)</h4>
+<div><pre class="line-numbers"><code class="language-html">&lt;ngx-number-spinner
+    [value]=&quot;4&quot;
+    (change)=&quot;change($event)&quot; 
+    [min]=&quot;1&quot;&gt;
+&lt;/ngx-number-spinner&gt;</code></pre></div><h4 id="with-validation-max-value-min9">With validation &#39;MAX&#39; value (min=9)</h4>
+<div><pre class="line-numbers"><code class="language-html">&lt;ngx-number-spinner
+    [value]=&quot;4&quot;
+    (change)=&quot;change($event)&quot; 
+    [max]=&quot;9&quot;&gt;
+&lt;/ngx-number-spinner&gt;</code></pre></div><h4 id="with-validation-min-and-max-value-min1-max9">With validation &#39;MIN&#39; and &#39;MAX&#39; value (min=1, max=9)</h4>
+<div><pre class="line-numbers"><code class="language-html">&lt;ngx-number-spinner
+    [value]=&quot;4&quot;
+    (change)=&quot;change($event)&quot;
+    [min]=&quot;1&quot;
+    [max]=&quot;9&quot;&gt;
+&lt;/ngx-number-spinner&gt;</code></pre></div><h4 id="with-step-step5">With &#39;STEP&#39; (step=5)</h4>
+<div><pre class="line-numbers"><code class="language-html">&lt;ngx-number-spinner
+    (change)=&quot;change($event)&quot; 
+    [step]=&quot;5&quot;&gt;
+&lt;/ngx-number-spinner&gt;</code></pre></div><hr>
+<h3 id="form-example">Form Example</h3>
+<div><pre class="line-numbers"><code class="language-typescript">import { FormBuilder, FormGroup, FormControl } from &#39;&#64;angular/forms&#39;;
+
+export class AppComponent {
+    form: FormGroup;
+
+    constructor(private fb: FormBuilder) {
+        this.form = this.fb.group({
+            price: 11
+        });
+    }
+
+    submit() {
+        alert(JSON.stringify(this.form.value));
+    }
+}</code></pre></div><div><pre class="line-numbers"><code class="language-html">&lt;form [formGroup]=&quot;form&quot; (submit)=&quot;submit()&quot;&gt;
+    &lt;ngx-number-spinner formControlName=&quot;price&quot; [min]=&quot;1&quot; [max]=&quot;9&quot;&gt;&lt;/ngx-number-spinner&gt;
+
+    &lt;button type=&quot;submit&quot;&gt;submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre></div><h3 id="component-inputs-and-outputs">Component Inputs and Outputs</h3>
+<hr>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th align="left">Attribute</th>
+<th align="left">Type</th>
+<th align="center">Required</th>
+<th align="left">Default</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">value</td>
+<td align="left">[input] number</td>
+<td align="center">No</td>
+<td align="left">0</td>
+<td align="left">initial value for the spinner</td>
+</tr>
+<tr>
+<td align="left">min</td>
+<td align="left">[input] number</td>
+<td align="center">No</td>
+<td align="left">null</td>
+<td align="left">limit the minimal number</td>
+</tr>
+<tr>
+<td align="left">max</td>
+<td align="left">[input] number</td>
+<td align="center">No</td>
+<td align="left">null</td>
+<td align="left">limit the maximum number</td>
+</tr>
+<tr>
+<td align="left">spin</td>
+<td align="left">[input] number</td>
+<td align="center">No</td>
+<td align="left">1</td>
+<td align="left">increment or decrement by current number</td>
+</tr>
+<tr>
+<td align="left">vertical</td>
+<td align="left">[input] vertical</td>
+<td align="center">horizontal</td>
+<td align="left">No</td>
+<td align="left">horizontal</td>
+</tr>
+<tr>
+<td align="left">(change)</td>
+<td align="left">(output) number</td>
+<td align="center">no</td>
+<td align="left">-</td>
+<td align="left">emits the value of the current number, every time the user clicks the - or + button</td>
+</tr>
+<tr>
+<td align="left">-------------------------------------------------------------------------------------------------------</td>
+<td align="left"></td>
+<td align="center"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="issues">Issues</h2>
+<p>If you find any issues feel free to open a request in <a href="https://github.com/mandhu/ngx-number-spinner/issues">the Issues tab</a>. If I have the time I will try to solve any issues but cannot make any guarantees. Feel free to contribute yourself.</p>
+<h2 id="contributing">Contributing</h2>
+<p>To contribute, clone the repo. Then, run <code>npm install</code> to get the packages needed for the library to work.</p>
+<h3 id="thanks">Thanks</h3>
+<ul>
+<li><a href="https://github.com/mandhu">mandhu</a></li>
+<li><a href="https://github.com/jrquick17">jrquick17</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
