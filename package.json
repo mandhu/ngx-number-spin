@@ -6,18 +6,19 @@
   "license": "MIT",
   "readme": "README.md",
   "bugs": {
-    "url": "https://github.com/jrquick17/ionic4-auto-complete/issues"
+    "url": "https://github.com/jrquick17/ngx-number-spinner/issues"
   },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run build:demo && npm run build:lib",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:demo": "ng build --project=ngx-number-spinner-demo",
     "build:lib": "ng build --project ngx-number-spinner && cp README.md dist/ngx-number-spinner/",
-    "publish:lib": "npm run build:lib && npm publish dist/ngx-number-spinner"
+    "publish": "npm publish dist/ngx-number-spinner",
+    "publish:lib": "npm run build:lib && npm run publish"
   },
   "private": true,
   "dependencies": {
