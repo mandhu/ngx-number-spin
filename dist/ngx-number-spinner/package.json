@@ -1,6 +1,6 @@
 {
   "name": "ngx-number-spinner",
-  "version": "2.1.0",
+  "version": "2.0.1",
   "license": "MIT",
   "description": "An Angular number spinner component",
   "keywords": [
@@ -28,15 +28,5 @@
   },
   "dependencies": {
     "tslib": "^2.0.0"
-  },
-  "main": "bundles/ngx-number-spinner.umd.js",
-  "module": "fesm2015/ngx-number-spinner.js",
-  "es2015": "fesm2015/ngx-number-spinner.js",
-  "esm2015": "esm2015/ngx-number-spinner.js",
-  "fesm2015": "fesm2015/ngx-number-spinner.js",
-  "typings": "ngx-number-spinner.d.ts",
-  "sideEffects": false,
-  "scripts": {
-    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
   }
 }
