@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/forms'), require('@angular/common')) :
     typeof define === 'function' && define.amd ? define('ngx-number-spinner', ['exports', '@angular/core', '@angular/forms', '@angular/common'], factory) :
-    (global = global || self, factory(global['ngx-number-spinner'] = {}, global.ng.core, global.ng.forms, global.ng.common));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['ngx-number-spinner'] = {}, global.ng.core, global.ng.forms, global.ng.common));
 }(this, (function (exports, i0, forms, i1) { 'use strict';
 
     var _c0 = function (a0, a1) { return { "horizontal-wrapper": a0, "vertical-wrapper": a1 }; };
