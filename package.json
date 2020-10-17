@@ -1,50 +1,62 @@
 {
   "name": "ngx-number-spinner",
-  "version": "2.2.0",
-  "author": "Jeremy Quick<me@jrquick.com>",
-  "github": "https://github.com/jrquick17/ngx-number-spinner",
-  "license": "MIT",
+  "version": "2.2.1",
   "readme": "README.md",
+  "homepage": "https://ngx-number-spinner.jrquick.com",
+  "scripts": {
+    "build": "ng-packagr -p package.json",
+    "demo": "cd demo && ng serve",
+    "demo:build": "cd demo && ng build --prod && cd ..",
+    "demo:test": "npm run build && cd demo && cp -fr ../dist/* node_modules/ngx-number-spinner/ && cd .. && npm run demo",
+    "docs": "npm run docs:build",
+    "docs:build": "compodoc -p tsconfig.json -n ngx-number-spinner -d docs --hideGenerator",
+    "docs:serve": "npm run docs:build -- -s",
+    "docs:watch": "npm run docs:build -- -s -w",
+    "lint": "tslint --project tsconfig.json src/**/*.ts",
+    "publish": "npm publish dist",
+    "shipit": "npm run test && npm run build && npm run docs:build && npm run publish",
+    "test": "ng test --browsers PhantomJS --progress --watch false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrquick17/ngx-number-spinner"
+  },
+  "author": {
+    "name": "Jeremy Quick",
+    "email": "me@jrquick.com",
+    "url": "https://jrquick.com"
+  },
+  "keywords": [
+    "angular",
+    "internet-speed",
+    "speed-test"
+  ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jrquick17/ngx-number-spinner/issues"
   },
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "build:demo": "ng build --project=ngx-number-spinner-demo",
-    "build:lib": "ng build --project ngx-number-spinner && cp README.md dist/ngx-number-spinner/",
-    "publish:lib": "npm run build:lib && cp -f projects/ngx-number-spinner/package.json dist/ngx-number-spinner/package.json && npm publish dist/ngx-number-spinner"
-  },
-  "private": true,
-  "dependencies": {
-    "@angular/animations": "~10.1.6",
-    "@angular/cdk": "^10.2.5",
-    "@angular/common": "~10.1.6",
-    "@angular/compiler": "~10.1.6",
-    "@angular/core": "~10.1.6",
-    "@angular/forms": "~10.1.6",
-    "@angular/material": "^10.2.5",
-    "@angular/platform-browser": "~10.1.6",
-    "@angular/platform-browser-dynamic": "~10.1.6",
-    "@angular/router": "~10.1.6",
-    "core-js": "^3.6.4",
-    "ngx-number-spinner": "^2.0.1",
-    "rxjs": "^6.6.0",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.10.3"
+  "ngPackage": {
+    "lib": {
+      "entryFile": "src/main.ts"
+    }
   },
   "devDependencies": {
     "@angular-devkit/architect": "^0.1000.3",
     "@angular-devkit/build-angular": "~0.1000.3",
     "@angular-devkit/core": "^10.0.3",
     "@angular-devkit/schematics": "^10.0.3",
+    "@angular/animations": "^10.0.5",
+    "@angular/cdk": "^10.1.0",
     "@angular/cli": "^10.0.3",
+    "@angular/common": "^10.0.5",
+    "@angular/compiler": "^10.0.5",
     "@angular/compiler-cli": "^10.0.5",
+    "@angular/core": "^10.0.5",
+    "@angular/forms": "^10.0.5",
     "@angular/language-service": "^10.0.5",
+    "@angular/platform-browser": "^10.0.5",
+    "@angular/platform-browser-dynamic": "^10.0.5",
+    "@angular/router": "^10.0.5",
     "@angular/service-worker": "^10.0.5",
     "@compodoc/compodoc": "^1.1.11",
     "@types/core-js": "^2.5.3",
@@ -66,9 +78,15 @@
     "ng-packagr": "^10.0.0",
     "protractor": "~7.0.0",
     "rollup": "^2.32.0",
+    "rxjs": "^6.6.0",
     "ts-node": "^8.10.2",
     "tslint": "~6.1.0",
     "typescript": "~3.9.7",
-    "webpack": "^4.43.0"
-  }
+    "webpack": "^4.43.0",
+    "zone.js": "~0.10.3"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "peerDependencies": {}
 }
