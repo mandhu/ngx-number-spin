@@ -6,7 +6,7 @@
   "license": "MIT",
   "readme": "README.md",
   "bugs": {
-    "url": "https://github.com/jrquick17/ionic4-auto-complete/issues"
+    "url": "https://github.com/jrquick17/ngx-number-spinner/issues"
   },
   "scripts": {
     "ng": "ng",
