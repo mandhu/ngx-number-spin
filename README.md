@@ -20,7 +20,6 @@
 This is a light-weight Angular 7+ component for adding a number spinner to your project. 
 
 * Try out [the demo](https://ngx-number-spinner.jrquick.com) to see it in action!
-* Checkout [my other Angular project](https://github.com/jrquick17/ngx-text-editor) to add a WYSIWYG editor to your project too!
 * Visit [my website](https://jrquick.com) for other cool projects!
 
 ## Setup ##
@@ -156,7 +155,7 @@ export class AppComponent {
 
 ## Issues ##
 
-If you find any issues feel free to open a request in [the Issues tab](https://github.com/jrquick17/ngx-number-spinner/issues). If I have the time I will try to solve any issues but cannot make any guarantees. Feel free to contribute yourself.
+If you find any issues feel free to open a request in [the Issues tab](https://github.com/mandhu/ngx-number-spinner/issues). If I have the time I will try to solve any issues but cannot make any guarantees. Feel free to contribute yourself.
 
 ## Contributing ##
 
