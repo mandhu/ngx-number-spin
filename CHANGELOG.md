@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+## [2.2.0]
+### Removed
+* max-width allowing more customization by [jrquick17](https://github.com/jrquick17)
+
 ## [2.1.0]
 ### Released
 * Angular 9 and 10 compatible version by [jrquick17](https://github.com/jrquick17)

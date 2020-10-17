@@ -2,7 +2,7 @@
   Horizontal Example
 </h3>
 
-<div style="margin-left: 4rem;">
+<div style="margin-left: 4rem; max-width: 200px;">
   <ngx-number-spinner [value]="1"
                       (change)="change($event)"
                       [direction]="'horizontal'"></ngx-number-spinner>
@@ -12,7 +12,7 @@
   Vertical Example
 </h3>
 
-<div style="margin-left: 4rem;">
+<div style="margin-left: 4rem; max-width: 200px;">
   <ngx-number-spinner style="margin-left: 4rem;"
                       [value]="2"
                       (change)="change($event)"
@@ -23,7 +23,7 @@
   With <b>[min]="1"</b> and <b>[max]="2"</b>
 </h3>
 
-<div style="margin-left: 4rem;">
+<div style="margin-left: 4rem; max-width: 200px;">
   <ngx-number-spinner style="margin-left: 4rem;"
                       [value]="4"
                       (change)="change($event)"
@@ -35,7 +35,7 @@
   With <b>[step]="5"</b>
 </h3>
 
-<div style="margin-left: 4rem;">
+<div style="margin-left: 4rem; max-width: 200px;">
   <ngx-number-spinner (change)="change($event)"
                       [step]="5"></ngx-number-spinner>
 </div>
@@ -44,11 +44,9 @@
   In a form
 </h3>
 
-<div style="margin-left: 4rem;">
+<div style="margin-left: 4rem; max-width: 200px;">
   <form [formGroup]="form"
         (submit)="submit()">
-      <ngx-number-spinner
-        formControlName="price">
-      </ngx-number-spinner>
+      <ngx-number-spinner formControlName="price"></ngx-number-spinner>
   </form>
 </div>
